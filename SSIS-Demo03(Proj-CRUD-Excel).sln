@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS-Demo03(Proj-CRUD-Excel)", "SSIS-Demo03(Proj-CRUD-Excel).dtproj", "{13184EC8-DFE3-4956-ABDD-E7135F713E1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{113A79CF-17B3-43B8-9433-7F5599072F58}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Files\01 Drop DB.sql = Solution Files\01 Drop DB.sql
+		Solution Files\02 Create DB.sql = Solution Files\02 Create DB.sql
+		Solution Files\03 Drop and Create Table.sql = Solution Files\03 Drop and Create Table.sql
+		Solution Files\README.txt = Solution Files\README.txt
+		Solution Files\Sample01.xlsx = Solution Files\Sample01.xlsx
+		Solution Files\Sample01_2003.xls = Solution Files\Sample01_2003.xls
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13184EC8-DFE3-4956-ABDD-E7135F713E1F}.Development|Default.ActiveCfg = Development
+		{13184EC8-DFE3-4956-ABDD-E7135F713E1F}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {449FC03C-44A9-46CC-AD47-DE095489DDE7}
+	EndGlobalSection
+EndGlobal

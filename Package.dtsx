@@ -1,0 +1,695 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/8/2019 11:44:46 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-I4VDBV3"
+  DTS:CreatorName="DESKTOP-I4VDBV3\C"
+  DTS:DTSID="{D5DC3ECA-8D8D-4BD5-B6CC-0BCC6A8CACBD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1300.371"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{FA5942AC-B256-41E0-9D5D-FEFEEF05D1BB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-I4VDBV3.CRUDFromExcel]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{51BEC4E4-273A-43D1-A505-B4E72C906CE8}"
+      DTS:ObjectName="DESKTOP-I4VDBV3.CRUDFromExcel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-I4VDBV3;Initial Catalog=CRUDFromExcel;Integrated Security=True;Application Name=SSIS-Package-{51BEC4E4-273A-43D1-A505-B4E72C906CE8}DESKTOP-I4VDBV3.CRUDFromExcel;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{2F8AF219-4C89-491B-9F52-751CC289F2BE}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\C\Documents\My Data\WorkRelated\Projects\SSIS\SSIS-Demo03(Proj-CRUD-Excel)\Solution Files\Sample01.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{463756C3-0F19-4FE8-A0EA-A13883881947}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Action">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D6A73A1A-E758-4806-8B27-FABBBB26E07F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ItemId">
+      <DTS:VariableValue
+        DTS:DataType="5">0.</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A6119B27-62FF-4583-AF58-2C131F472A30}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RecordsetOutput">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{90D4A9FE-E294-41E0-A3AD-19EE642A16FF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Value">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{CC11F4C1-CB6D-42CC-A392-0C233FEBFBBA}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{5E519D8D-7224-4D63-B652-63110E8016A9}"
+        DTS:ObjectName="{5E519D8D-7224-4D63-B652-63110E8016A9}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::RecordsetOutput" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Create"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8D452A26-85CB-4C2C-BD05-7172DDDF9CAE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51BEC4E4-273A-43D1-A505-B4E72C906CE8}"
+              SQLTask:SqlStatementSource="Insert INTO Table01 (ID, Value) values (@ItemId, @Value)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ItemId"
+                SQLTask:DtsVariableName="User::ItemId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="8"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Value"
+                SQLTask:DtsVariableName="User::Value"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Delete"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8b3625e1-fefa-4d21-b5f3-ceaf11670492}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51BEC4E4-273A-43D1-A505-B4E72C906CE8}"
+              SQLTask:SqlStatementSource="DELETE FROM Table01 WHERE ID = @ItemId" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ItemId"
+                SQLTask:DtsVariableName="User::ItemId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="8"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Landing"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{12C09031-91FF-4B90-AA94-04E15C015B40}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Landing">
+          <DTS:Variables />
+          <DTS:Executables />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{64e5322a-eb00-4813-ab57-208fd674e4cf}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51BEC4E4-273A-43D1-A505-B4E72C906CE8}"
+              SQLTask:SqlStatementSource="UPDATE Table01 SET Value = @Value WHERE ID = @ItemId" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@ItemId"
+                SQLTask:DtsVariableName="User::ItemId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="8"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@Value"
+                SQLTask:DtsVariableName="User::Value"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="16"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{84D8FEB5-B7AD-41DF-8807-B1CE63BC8540}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[User::Action] == &quot;CREATE&quot;"
+          DTS:From="Package\Foreach Loop Container\Landing"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach Loop Container\Create" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{9141BA88-1E2F-449D-B2AE-9FF094E37705}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[User::Action] == &quot;DELETE&quot;"
+          DTS:From="Package\Foreach Loop Container\Landing"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Foreach Loop Container\Delete" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{56C5040C-8F83-4768-B601-1E152BC91A77}"
+          DTS:From="Package\Foreach Loop Container\Landing"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Foreach Loop Container\Update" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{09E8B9B9-EFA6-4B57-B414-745DC860CAE0}"
+          DTS:ObjectName="{09E8B9B9-EFA6-4B57-B414-745DC860CAE0}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Action" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{459702F4-F0F2-4BA2-8F01-9E3B5938CE6F}"
+          DTS:ObjectName="{459702F4-F0F2-4BA2-8F01-9E3B5938CE6F}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::ItemId" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{A2439F1F-A2CE-4D5F-9940-5C94DBCDA8D7}"
+          DTS:ObjectName="{A2439F1F-A2CE-4D5F-9940-5C94DBCDA8D7}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::Value" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Excel"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8A25FB3B-DAB0-419D-9934-B315E6C9863A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Excel"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Excel\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Excel\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="{94CBF648-391A-4CF1-9236-072CC6E17D14}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Excel Connection Manager 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Action]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Action]"
+                      length="255"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Action]"
+                      name="Action"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[ItemId]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[ItemId]"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[ItemId]"
+                      name="ItemId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Value]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Value]"
+                      length="255"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Value]"
+                      name="Value"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Action]"
+                      dataType="wstr"
+                      length="255"
+                      name="Action" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[ItemId]"
+                      dataType="r8"
+                      name="ItemId" />
+                    <externalMetadataColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].ExternalColumns[Value]"
+                      dataType="wstr"
+                      length="255"
+                      name="Value" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Action]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Action]"
+                      name="Action" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ItemId]"
+                      dataType="r8"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ItemId]"
+                      name="ItemId" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Value]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[Value]"
+                      name="Value" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Excel\Recordset Destination"
+              componentClassID="Microsoft.RecordsetDestination"
+              contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
+              name="Recordset Destination">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the recordset."
+                  name="VariableName">User::RecordsetOutput</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Excel\Recordset Destination.Inputs[Recordset Destination Input]"
+                  hasSideEffects="true"
+                  name="Recordset Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Excel\Recordset Destination.Inputs[Recordset Destination Input].Columns[Action]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Action"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Action]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Recordset Destination.Inputs[Recordset Destination Input].Columns[ItemId]"
+                      cachedDataType="r8"
+                      cachedName="ItemId"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[ItemId]" />
+                    <inputColumn
+                      refId="Package\Load Excel\Recordset Destination.Inputs[Recordset Destination Input].Columns[Value]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Value"
+                      lineageId="Package\Load Excel\Excel Source.Outputs[Excel Source Output].Columns[Value]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Excel.Paths[Excel Source Output]"
+              endId="Package\Load Excel\Recordset Destination.Inputs[Recordset Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Load Excel\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F0AF2AC5-C51E-49DA-90FC-72E61CFB5591}"
+      DTS:From="Package\Load Excel"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129.333333333334,42.6666666666667"
+          Id="Package\Load Excel"
+          TopLeft="57.9166658036411,28.1666661630074" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="150,50.6666666666667"
+          Size="150,93.3333333333334"
+          Id="Package\Foreach Loop Container\Landing"
+          TopLeft="141.999997566144,4.59999871373182" />
+        <NodeLayout
+          Size="110.666666666667,42.6666666666667"
+          Id="Package\Foreach Loop Container\Create"
+          TopLeft="19.9166660519938,133.766665419142" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="193.249997920046,97.9333320470651">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-117.999998534719,35.8333333720764"
+              Start="0,0"
+              End="-117.999998534719,28.3333333720764">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.9166666860382" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.9166666860382"
+                    Point2="0,17.9166666860382"
+                    Point3="-4,17.9166666860382" />
+                  <mssgle:LineSegment
+                    End="-113.999998534719,17.9166666860382" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-113.999998534719,17.9166666860382"
+                    Point2="-117.999998534719,17.9166666860382"
+                    Point3="-117.999998534719,21.9166666860382" />
+                  <mssgle:LineSegment
+                    End="-117.999998534719,28.3333333720764" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-66.9999992673596,22.9166666860382,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="109.333333333334,42.6666666666667"
+          Id="Package\Foreach Loop Container\Delete"
+          TopLeft="286.666662395001,131.599999256134" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="240.66666423281,97.9333320470652">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.666664828857,33.6666672090688"
+              Start="0,0"
+              End="100.666664828857,26.1666672090688">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.67985949919948" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.67985949919948"
+                    Point2="0,13.6798594991995"
+                    Point3="4,13.6798594991995" />
+                  <mssgle:LineSegment
+                    End="96.6666648288568,13.6798594991995" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.6666648288568,13.6798594991995"
+                    Point2="100.666664828857,13.6798594991995"
+                    Point3="100.666664828857,17.6798594991995" />
+                  <mssgle:LineSegment
+                    End="100.666664828857,26.1666672090688" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="42.3333324144284,18.6798594991995,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42"
+          Id="Package\Foreach Loop Container\Update"
+          TopLeft="159.999997615814,134.966665946047" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="218.833330924312,97.9333320470652">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.0333338989814"
+              Start="0,0"
+              End="0,29.5333338989814">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5333338989814" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="462.666666666667,258.666666666667"
+          Size="462.666666666667,301.333333333334"
+          Id="Package\Foreach Loop Container"
+          TopLeft="21.2499996833503,107.899998070598" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="122.583332470308,70.8333328296741">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130.000000546376,37.0666652409236"
+              Start="0,0"
+              End="130.000000546376,29.5666652409236">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5333326204618" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5333326204618"
+                    Point2="0,18.5333326204618"
+                    Point3="4,18.5333326204618" />
+                  <mssgle:LineSegment
+                    End="126.000000546376,18.5333326204618" />
+                  <mssgle:CubicBezierSegment
+                    Point1="126.000000546376,18.5333326204618"
+                    Point2="130.000000546376,18.5333326204618"
+                    Point3="130.000000546376,22.5333326204618" />
+                  <mssgle:LineSegment
+                    End="130.000000546376,29.5666652409236" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Excel">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Load Excel\Excel Source"
+          TopLeft="163.333330899477,44.1999992096424" />
+        <NodeLayout
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\Load Excel\Recordset Destination"
+          TopLeft="145.41666449979,113.766665419142" />
+        <EdgeLayout
+          Id="Package\Load Excel.Paths[Excel Source Output]"
+          TopLeft="234.874997699633,86.8666658763091">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.8999995428324"
+              Start="0,0"
+              End="0,19.3999995428324">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3999995428324" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Excel\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Excel Connection Manager"
+  DTS:DTSID="{D321EDAD-D651-4D8E-B749-4815552BB0AC}"
+  DTS:CreationName="EXCEL">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\C\Documents\My Data\WorkRelated\Projects\SSIS\SSIS-Demo03(Proj-CRUD-Excel)\Solution Files\Sample01.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
